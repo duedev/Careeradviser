@@ -1,3 +1,5 @@
+import CareerTimeline from './Timeline';  // New import
+
 export default function Recommendations({ data }: { data: any }) {
   if (!data) return null;
   return (
