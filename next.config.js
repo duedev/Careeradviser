@@ -1,5 +1,5 @@
 module.exports = {
   output: 'export',
-  basePath: '/Careeradviser',  // Replace with your repo name
+  basePath: '/Careeradviser',
   assetPrefix: '/Careeradviser/',
 };
