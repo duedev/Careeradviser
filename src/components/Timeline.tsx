@@ -1,5 +1,5 @@
 'use client';
-import { Timeline } from 'vis-timeline-react';
+import Timeline from 'react-visjs-timeline';
 import { DataSet } from 'vis-data';
 
 interface TimelineProps {
