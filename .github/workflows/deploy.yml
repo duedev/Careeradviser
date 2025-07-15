@@ -11,7 +11,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'  # Use latest LTS for Next.js compatibility (adjust if your local is different)
-    - run: npm ci
+    - run: npm install # Changed from npm ci
     - run: npm run build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
