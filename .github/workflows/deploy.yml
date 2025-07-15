@@ -18,3 +18,4 @@ jobs:
       with:
         folder: out  # Next.js static export folder
         branch: gh-pages
+        token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly use built-in token
