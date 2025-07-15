@@ -1,14 +1,28 @@
 import careerData from '../data/careerData.json';
 
+interface RecommendationData {
+  path: { focus: string; outcomes: { salary_ca: { range: number[] }; remote_availability: string }; certifications: Array<{ name: string; cost: number }> };
+  timeline: Array<{ [key: string]: string }>;
+  estimatedSalary: number;
+}
+
 interface UserInput {
   experience_years: number;
   salary_target: string;
-  career_pivot: string[];  // Now array
-  // Add other fields if needed
+  career_pivot: string[];
+  current_salary?: number;
+  location?: string;
+  education?: string;
+  goals?: {
+    salary_target: string;
+    work_preference: string;
+    career_pivot: string[];
+    concerns: string;
+  };
 }
 
-export function getRecommendations(userInput: UserInput) {
-  const { pathways, recommendations } = careerData as any;  // Type careerData if possible
+export function getRecommendations(userInput: UserInput): RecommendationData | null {
+  const { pathways, recommendations } = careerData as any;
   let suggestedPath = recommendations.primary_path.toLowerCase();
   if (userInput.career_pivot.includes('Tech') && userInput.salary_target === '100000+') {
     suggestedPath = 'tech_track';
